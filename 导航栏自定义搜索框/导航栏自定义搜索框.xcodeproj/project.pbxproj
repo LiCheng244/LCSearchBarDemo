@@ -15,8 +15,10 @@
 		5A2AB5781E1B566B002D1F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AB5761E1B566B002D1F30 /* LaunchScreen.storyboard */; };
 		5A2AB5831E1B566B002D1F30 /* _________Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AB5821E1B566B002D1F30 /* _________Tests.m */; };
 		5A2AB58E1E1B566C002D1F30 /* _________UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AB58D1E1B566C002D1F30 /* _________UITests.m */; };
-		5A2AB5A01E1B5804002D1F30 /* LCSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AB59F1E1B5804002D1F30 /* LCSearchBarView.m */; };
 		5A2AB5A31E1B91D2002D1F30 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AB5A21E1B91D2002D1F30 /* SearchResultViewController.m */; };
+		5AD6845E1E1C9C16005BED06 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6845A1E1C9C16005BED06 /* close@2x.png */; };
+		5AD6845F1E1C9C16005BED06 /* LCSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6845C1E1C9C16005BED06 /* LCSearchBarView.m */; };
+		5AD684601E1C9C16005BED06 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6845D1E1C9C16005BED06 /* search@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +55,12 @@
 		5A2AB5891E1B566B002D1F30 /* 导航栏自定义搜索框UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "导航栏自定义搜索框UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2AB58D1E1B566C002D1F30 /* _________UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_________UITests.m"; sourceTree = "<group>"; };
 		5A2AB58F1E1B566C002D1F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A2AB59E1E1B5804002D1F30 /* LCSearchBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSearchBarView.h; sourceTree = "<group>"; };
-		5A2AB59F1E1B5804002D1F30 /* LCSearchBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSearchBarView.m; sourceTree = "<group>"; };
 		5A2AB5A11E1B91D2002D1F30 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		5A2AB5A21E1B91D2002D1F30 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		5AD6845A1E1C9C16005BED06 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		5AD6845B1E1C9C16005BED06 /* LCSearchBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSearchBarView.h; sourceTree = "<group>"; };
+		5AD6845C1E1C9C16005BED06 /* LCSearchBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSearchBarView.m; sourceTree = "<group>"; };
+		5AD6845D1E1C9C16005BED06 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +111,9 @@
 		5A2AB5671E1B566B002D1F30 /* 导航栏自定义搜索框 */ = {
 			isa = PBXGroup;
 			children = (
+				5AD684591E1C9C16005BED06 /* LCSearchBarView */,
 				5A2AB56B1E1B566B002D1F30 /* AppDelegate.h */,
 				5A2AB56C1E1B566B002D1F30 /* AppDelegate.m */,
-				5A2AB59E1E1B5804002D1F30 /* LCSearchBarView.h */,
-				5A2AB59F1E1B5804002D1F30 /* LCSearchBarView.m */,
 				5A2AB56E1E1B566B002D1F30 /* ViewController.h */,
 				5A2AB56F1E1B566B002D1F30 /* ViewController.m */,
 				5A2AB5A11E1B91D2002D1F30 /* SearchResultViewController.h */,
@@ -148,6 +151,17 @@
 				5A2AB58F1E1B566C002D1F30 /* Info.plist */,
 			);
 			path = "导航栏自定义搜索框UITests";
+			sourceTree = "<group>";
+		};
+		5AD684591E1C9C16005BED06 /* LCSearchBarView */ = {
+			isa = PBXGroup;
+			children = (
+				5AD6845A1E1C9C16005BED06 /* close@2x.png */,
+				5AD6845B1E1C9C16005BED06 /* LCSearchBarView.h */,
+				5AD6845C1E1C9C16005BED06 /* LCSearchBarView.m */,
+				5AD6845D1E1C9C16005BED06 /* search@2x.png */,
+			);
+			path = LCSearchBarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +276,8 @@
 				5A2AB5781E1B566B002D1F30 /* LaunchScreen.storyboard in Resources */,
 				5A2AB5751E1B566B002D1F30 /* Assets.xcassets in Resources */,
 				5A2AB5731E1B566B002D1F30 /* Main.storyboard in Resources */,
+				5AD684601E1C9C16005BED06 /* search@2x.png in Resources */,
+				5AD6845E1E1C9C16005BED06 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2AB5701E1B566B002D1F30 /* ViewController.m in Sources */,
-				5A2AB5A01E1B5804002D1F30 /* LCSearchBarView.m in Sources */,
+				5AD6845F1E1C9C16005BED06 /* LCSearchBarView.m in Sources */,
 				5A2AB5A31E1B91D2002D1F30 /* SearchResultViewController.m in Sources */,
 				5A2AB56D1E1B566B002D1F30 /* AppDelegate.m in Sources */,
 				5A2AB56A1E1B566B002D1F30 /* main.m in Sources */,
@@ -528,6 +544,7 @@
 				5A2AB5941E1B566C002D1F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A2AB5951E1B566C002D1F30 /* Build configuration list for PBXNativeTarget "导航栏自定义搜索框Tests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +553,7 @@
 				5A2AB5971E1B566C002D1F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A2AB5981E1B566C002D1F30 /* Build configuration list for PBXNativeTarget "导航栏自定义搜索框UITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +562,7 @@
 				5A2AB59A1E1B566C002D1F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

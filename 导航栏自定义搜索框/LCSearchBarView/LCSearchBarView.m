@@ -65,7 +65,6 @@
         self.textFiled.delegate = self;
         self.textFiled.returnKeyType = UIReturnKeyDone;
         [self.textFiled addTarget:self action:@selector(textFiledValueChange:) forControlEvents:(UIControlEventEditingChanged)];
-        [self.textFiled addTarget:self action:@selector(searchBarViewClicked:) forControlEvents:(UIControlEventTouchUpInside)];
         [self addSubview:self.textFiled];
     }
     
@@ -83,40 +82,45 @@
 }
 
 #pragma mark - <set方法>
--(void)setFont:(UIFont *)font{
-    _font = font;
-    self.textFiled.font = font;
-    [self.textFiled setValue:font forKeyPath:@"_placeholderLabel.font"];
-}
--(void)setText:(NSString *)text{
-    _text = text;
-    self.textFiled.text = text;
+-(void)setLc_font:(UIFont *)lc_font{
+    _lc_font = lc_font;
+    self.textFiled.font = lc_font;
+    [self.textFiled setValue:lc_font forKeyPath:@"_placeholderLabel.font"];
 }
 
--(void)setTextColor:(UIColor *)textColor{
-    _textColor = textColor;
-    self.textFiled.textColor = textColor;
+-(void)setLc_text:(NSString *)lc_text{
+    _lc_text = lc_text;
+    self.textFiled.text = lc_text;
+}
+-(void)setLc_tintColor:(UIColor *)lc_tintColor{
+    _lc_tintColor = lc_tintColor;
+    self.textFiled.tintColor = lc_tintColor;
 }
 
--(void)setPlaceholder:(NSString *)placeholder{
-    _placeholder = placeholder;
-    self.textFiled.placeholder = placeholder;
+-(void)setLc_textColor:(UIColor *)lc_textColor{
+    _lc_textColor = lc_textColor;
+    self.textFiled.textColor = lc_textColor;
 }
 
--(void)setPlaceholderColor:(UIColor *)placeholderColor{
-    _placeholderColor = placeholderColor;
-    [self.textFiled setValue:placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
+-(void)setLc_placeholder:(NSString *)lc_placeholder{
+    _lc_placeholder = lc_placeholder;
+    self.textFiled.placeholder = lc_placeholder;
 }
 
--(void)setSearchBarViewColor:(UIColor *)searchBarViewColor{
-    _searchBarViewColor = searchBarViewColor;
-    self.backgroundColor = searchBarViewColor;
+-(void)setLc_placeholderColor:(UIColor *)lc_placeholderColor{
+    _lc_placeholderColor = lc_placeholderColor;
+    [self.textFiled setValue:lc_placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
+}
+
+-(void)setLc_backgroundColor:(UIColor *)lc_backgroundColor{
+    _lc_backgroundColor = lc_backgroundColor;
+    self.backgroundColor = lc_backgroundColor;
 }
 
 /** 是否弹出键盘 */
--(void)setIsBecomeFirstResponder:(BOOL)isBecomeFirstResponder{
-    _isBecomeFirstResponder = isBecomeFirstResponder;
-    if (isBecomeFirstResponder) {
+-(void)setLc_isFirstResponder:(BOOL)lc_isFirstResponder{
+    lc_isFirstResponder = lc_isFirstResponder;
+    if (lc_isFirstResponder) {
         [self.textFiled becomeFirstResponder];
     }else{
         [self.textFiled resignFirstResponder];
@@ -124,66 +128,67 @@
 }
 
 /** 是否显示关闭按钮 */
--(void)setIsShowCloseImage:(BOOL)isShowCloseImage{
-    _isShowCloseImage = isShowCloseImage;
-    if (isShowCloseImage) {
-        self.closeBtn.hidden = YES;
-    }else{
+-(void)setLc_isShowCloseImage:(BOOL)lc_isShowCloseImage{
+    _lc_isShowCloseImage = lc_isShowCloseImage;
+    if (lc_isShowCloseImage) {
         self.closeBtn.hidden = NO;
+    }else{
+        self.closeBtn.hidden = YES;
     }
 }
 /** 关闭按钮图片 */
--(void)setCloseImage:(UIImage *)closeImage{
-    _closeImage = closeImage;
-    [self.closeBtn setImage:closeImage forState:(UIControlStateNormal)];
+-(void)setLc_closeImage:(UIImage *)lc_closeImage{
+    _lc_closeImage = lc_closeImage;
+    [self.closeBtn setImage:lc_closeImage forState:(UIControlStateNormal)];
 }
+
 
 #pragma mark - <按钮触发方法>
 /** 点击关闭按钮时触发 */
 -(void)closeClick{
-    if ([_searchBarDelegate respondsToSelector:@selector(lc_searchBarViewCancelButtonClicked:)]) {
-        [self.searchBarDelegate lc_searchBarViewCancelButtonClicked:self];
+    if ([_lc_delegate respondsToSelector:@selector(lc_searchBarViewCancelButtonClicked:)]) {
+        [self.lc_delegate lc_searchBarViewCancelButtonClicked:self];
     }
 }
 /** 输入文字改变时触发 */
 -(void)textFiledValueChange:(UITextField *)textFiled{
     
-    _text = textFiled.text;
-    if ([_searchBarDelegate respondsToSelector:@selector(lc_searchBarView:textDidChange:)]) {
-        [self.searchBarDelegate lc_searchBarView:self textDidChange:textFiled.text];
+    _lc_text = textFiled.text;
+    if ([_lc_delegate respondsToSelector:@selector(lc_searchBarView:textDidChange:)]) {
+        [self.lc_delegate lc_searchBarView:self textDidChange:textFiled.text];
     }
 }
 
 #pragma mark - <LCSearchBarViewDelegate>
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    if ([_searchBarDelegate respondsToSelector:@selector(lc_searchBarViewShouldBeginEditing:)]) {
-        [self.searchBarDelegate lc_searchBarViewShouldBeginEditing:self];
+    if ([_lc_delegate respondsToSelector:@selector(lc_searchBarViewShouldBeginEditing:)]) {
+        [self.lc_delegate lc_searchBarViewShouldBeginEditing:self];
     }
     return YES;
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    if ([_searchBarDelegate respondsToSelector:@selector(lc_searchBarViewDidBeginEditing:)]) {
-        [self.searchBarDelegate lc_searchBarViewDidBeginEditing:self];
+    if ([_lc_delegate respondsToSelector:@selector(lc_searchBarViewDidBeginEditing:)]) {
+        [self.lc_delegate lc_searchBarViewDidBeginEditing:self];
     }
 }
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    if ([_searchBarDelegate respondsToSelector:@selector(lc_searchBarViewShouldEndEditing:)]) {
-        [self.searchBarDelegate lc_searchBarViewShouldEndEditing:self];
+    if ([_lc_delegate respondsToSelector:@selector(lc_searchBarViewShouldEndEditing:)]) {
+        [self.lc_delegate lc_searchBarViewShouldEndEditing:self];
     }
     return YES;
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-    if ([_searchBarDelegate respondsToSelector:@selector(lc_searchBarViewDidEndEditing:)]) {
-        [self.searchBarDelegate lc_searchBarViewDidEndEditing:self];
+    if ([_lc_delegate respondsToSelector:@selector(lc_searchBarViewDidEndEditing:)]) {
+        [self.lc_delegate lc_searchBarViewDidEndEditing:self];
     }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if ([_searchBarDelegate respondsToSelector:@selector(lc_searchBarViewSearchButtonClicked:)]) {
-        [self.searchBarDelegate lc_searchBarViewSearchButtonClicked:self];
+    if ([_lc_delegate respondsToSelector:@selector(lc_searchBarViewSearchButtonClicked:)]) {
+        [self.lc_delegate lc_searchBarViewSearchButtonClicked:self];
     }
     return YES;
 }

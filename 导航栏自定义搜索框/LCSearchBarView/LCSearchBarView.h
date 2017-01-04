@@ -33,30 +33,31 @@
 @interface LCSearchBarView : UIView
 
 /** 内容 */
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *lc_text;
 /** 字体 */
-@property (nonatomic, strong) UIFont *font;
-
+@property (nonatomic, strong) UIFont *lc_font;
+/** 光标颜色 */
+@property (nonatomic, strong)  UIColor *lc_tintColor;
 /** 内容颜色 */
-@property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, strong) UIColor *lc_textColor;
 /** 占位文字 */
-@property (nonatomic, strong) NSString *placeholder;
+@property (nonatomic, strong) NSString *lc_placeholder;
 /** 占位文字颜色 */
-@property (nonatomic, strong) UIColor *placeholderColor;
+@property (nonatomic, strong) UIColor *lc_placeholderColor;
 
 /** 背景颜色 */
-@property (nonatomic, strong) UIColor *searchBarViewColor;
+@property (nonatomic, strong) UIColor *lc_backgroundColor;
 
 /** 是否弹出键盘 */
-@property (nonatomic, assign) BOOL isBecomeFirstResponder;
+@property (nonatomic, assign) BOOL lc_isFirstResponder;
 
 /** 是否显示关闭按钮 */
-@property (nonatomic, assign) BOOL isShowCloseImage;
+@property (nonatomic, assign) BOOL lc_isShowCloseImage;
 /** 关闭按钮样式 */
-@property (nonatomic, strong) UIImage *closeImage;
+@property (nonatomic, strong) UIImage *lc_closeImage;
 
 /** 代理 */
-@property (nonatomic, weak) id<LCSearchBarViewDelegate>searchBarDelegate;
+@property (nonatomic, weak) id<LCSearchBarViewDelegate>lc_delegate;
 
 
 @end

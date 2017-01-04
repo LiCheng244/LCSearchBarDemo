@@ -29,13 +29,14 @@
     [self.view addSubview:btn];
     
     self.searchBarView = [[LCSearchBarView alloc] initWithFrame:(CGRectMake(0, 0, self.view.frame.size.width - 80, 30))];
-    self.searchBarView.backgroundColor = [UIColor colorWithRed:255/255.0 green:132/255.0 blue:0/255.0 alpha:0.5];
-    self.searchBarView.placeholderColor = [UIColor redColor];
-    self.searchBarView.placeholder = @"搜索";
-    self.searchBarView.font = [UIFont systemFontOfSize:15];
-    self.searchBarView.textColor = [UIColor grayColor];
-    self.searchBarView.isShowCloseImage = NO;
-    self.searchBarView.searchBarDelegate = self;
+    self.searchBarView.lc_backgroundColor = [UIColor colorWithRed:255/255.0 green:132/255.0 blue:0/255.0 alpha:0.5];
+    self.searchBarView.lc_placeholder = @"搜索";
+    self.searchBarView.lc_placeholderColor = [UIColor whiteColor];
+    self.searchBarView.lc_font = [UIFont systemFontOfSize:15];
+    self.searchBarView.lc_textColor = [UIColor whiteColor];
+    self.searchBarView.lc_tintColor = [UIColor whiteColor];
+    self.searchBarView.lc_isShowCloseImage = YES;
+    self.searchBarView.lc_delegate = self;
     self.navigationItem.titleView = self.searchBarView;
 }
 
@@ -44,22 +45,20 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
+#pragma mark - <LCSearchBarViewDelegate>
 -(void)lc_searchBarViewSearchButtonClicked:(LCSearchBarView *)searchBarView{
-    NSLog(@"搜索");
+    
     // 微博搜索效果
-    if (self.searchBarView.text.length == 0) {
-        self.searchBarView.text = self.searchBarView.placeholder;
+    if (self.searchBarView.lc_text.length == 0) {
+        self.searchBarView.lc_text = self.searchBarView.lc_placeholder;
     }
-    self.searchBarView.isBecomeFirstResponder = NO;
-
+    self.searchBarView.lc_isFirstResponder = NO;
 }
 
 -(void)lc_searchBarViewCancelButtonClicked:(LCSearchBarView *)searchBarView{
-    NSLog(@"取消");
     
-    self.searchBarView.text = nil;
-    self.searchBarView.isBecomeFirstResponder = NO;
+    self.searchBarView.lc_text = nil;
+    self.searchBarView.lc_isFirstResponder = NO;
 }
 
 -(BOOL)lc_searchBarViewShouldBeginEditing:(LCSearchBarView *)searchBarView{
@@ -76,7 +75,6 @@
 }
 
 -(void)lc_searchBarView:(LCSearchBarView *)searchBarView textDidChange:(NSString *)searchText{
-
 }
 
 
